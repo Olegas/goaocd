@@ -1,4 +1,4 @@
-package aocd
+package goaocd
 
 import (
 	"strconv"
