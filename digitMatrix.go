@@ -1,16 +1,16 @@
 package goaocd
 
-func DigitMatrix(args ...int) (int, int, *[][]int) {
+func DigitMatrix(args ...int) (int, int, *[][]uint8) {
 	lines := Lines(args...)
 	width := len(lines[0])
 	height := len(lines)
-	mat := make([][]int, height)
+	mat := make([][]uint8, height)
 	for i := 0; i < height; i++ {
-		mat[i] = make([]int, width)
+		mat[i] = make([]uint8, width)
 	}
 	for y, line := range lines {
 		for x, s := range line {
-			i := int(s) - '0'
+			i := uint8(s) - '0'
 			mat[y][x] = i
 		}
 	}
