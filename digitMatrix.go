@@ -1,6 +1,6 @@
 package goaocd
 
-func DigitMatrix(args ...int) *[][]int {
+func DigitMatrix(args ...int) (int, int, *[][]int) {
 	lines := Lines(args...)
 	width := len(lines[0])
 	height := len(lines)
@@ -14,5 +14,5 @@ func DigitMatrix(args ...int) *[][]int {
 			mat[y][x] = i
 		}
 	}
-	return &mat
+	return width, height, &mat
 }
