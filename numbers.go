@@ -5,6 +5,10 @@ import (
 	"strings"
 )
 
+// Integers - return puzzle input as an array of integers
+// Initial input is splitted by " " (space) character
+//
+// See Input() docs for more info on parameters, authentication and caching
 func Integers(args ...int) []int {
 	data := Input(args...)
 	sNumbers := strings.Split(strings.TrimRight(data, "\n"), " ")

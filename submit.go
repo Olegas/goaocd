@@ -13,6 +13,16 @@ import (
 	"github.com/pkg/browser"
 )
 
+// Submit is used to... submit answers.
+// Level must be 1 or 2 (will panic in other case).
+// Answer can be string of number (%v used to format).
+// 2 more arguments can be used to configure date and year of puzzle.
+// See Input() docs for more info on how date configuration works.
+//
+// Example:
+//
+//	Submit(1, 42) // Submit 42 as an answer to part A of current day and current year
+//	Submit(2, 100500, 12) // Submit 100500 as an answer to part B of day 12 of current year
 func Submit(level int, answer interface{}, date ...int) bool {
 	godotenv.Load()
 
