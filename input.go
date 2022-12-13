@@ -18,7 +18,11 @@ import (
 )
 
 // Input - returns puzzle input as raw string.
-// If called without arguments, puzzle input for current year and day will be returned.
+// If called with no arguments, this helper will try to guess day from executale name.
+// If executable is named like "day13" and goaocd.Input() is invoked,
+// puzzle from day 13 of current year will be loaded, no matter which day is now actually.
+// If guessing failed, current day is used
+//
 // If called with one argument - year is current and day is value of an argument.
 //
 //	goaocd.Input(4) // Puzzle for day 4 of current year
@@ -26,10 +30,6 @@ import (
 // If called with 2 arguments, first is year and second is day.
 //
 //	goaocd.Input(2021, 3) // Puzzle for day 3 of AoC'2021
-//
-// If called with no arguments, this helper will try to guess day from executale name.
-// If executable is named like "day13" and goaocd.Input() is invoked,
-// puzzle from day 13 of current year will be loaded, no matter which day is now actually.
 func Input(args ...int) string {
 	godotenv.Load()
 
