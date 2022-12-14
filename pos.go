@@ -1,8 +1,21 @@
 package goaocd
 
+import "strings"
+
 // Position with coordinates X and Y
 type Pos struct {
 	X, Y int
+}
+
+// Create new Pos from string of format XXX,YYY
+// Example:
+//
+//	pos := NewPos("10,20")
+func NewPos(s string) Pos {
+	coords := strings.Split(s, ",")
+	x := atoi(coords[0])
+	y := atoi(coords[1])
+	return Pos{X: x, Y: y}
 }
 
 // Create new position by applying mutation
